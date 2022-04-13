@@ -13,6 +13,10 @@ WORKDIR /root
 # UBI doesn't seem to have a package for 'find', nabbed this from TOSS
 COPY find /usr/bin/find
 
+ENTRYPOINT ["/bin/sh"]
+
+FROM base AS base-with-lustre
+
 COPY kmod-lustre-2.14.0_1.llnl-1.t4.x86_64.rpm .
 COPY lustre-2.14.0_1.llnl-1.t4.x86_64.rpm .
 
