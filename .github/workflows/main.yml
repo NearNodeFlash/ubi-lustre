@@ -32,14 +32,21 @@ jobs:
     - name: Build the UBI Docker image with lustre
       run: docker build . --file Dockerfile --tag ghcr.io/billhpe/rhel-ubi8-lustre:${TAG}
       
+    - name: Tag the base UBI image as latest
+      run: docker tag ghcr.io/billhpe/rhel-ubi8-base:${TAG} ghcr.io/billhpe/rhel-ubi8-base:latest
+      
     - name: Push the base UBI image
       run: docker push ghcr.io/billhpe/rhel-ubi8-base:${TAG}
       
-    - name: Tag the base UBI image
-      run: docker tag ghcr.io/billhpe/rhel-ubi8-base:${TAG} ghcr.io/billhpe/rhel-ubi8-base:latest
+    - name: Push the latest base UBI image
+      run: docker push ghcr.io/billhpe/rhel-ubi8-base:latest
+      
+    - name: Tag the lustre UBI image as latest
+      run: docker tag ghcr.io/billhpe/rhel-ubi8-lustre:${TAG} ghcr.io/billhpe/rhel-ubi8-lustre:latest
       
     - name: Push the lustre UBI image
-      run: docker push ghcr.io/billhpe/rhel-ubi8-lustre:${TAG}
+      run: docker push ghcr.io/billhpe/rhel-ubi8-base:${TAG}
       
-    - name: Tag the lustre UBI image
-      run: docker tag ghcr.io/billhpe/rhel-ubi8-lustre:${TAG} ghcr.io/billhpe/rhel-ubi8-lustre:latest
+    - name: Push the latest lustre UBI image
+      run: docker push ghcr.io/billhpe/rhel-ubi8-base:latest
+      
