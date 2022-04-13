@@ -45,8 +45,8 @@ jobs:
       run: docker tag ghcr.io/billhpe/rhel-ubi8-lustre:${TAG} ghcr.io/billhpe/rhel-ubi8-lustre:latest
       
     - name: Push the lustre UBI image
-      run: docker push ghcr.io/billhpe/rhel-ubi8-base:${TAG}
+      run: docker push ghcr.io/billhpe/rhel-ubi8-lustre:${TAG}
       
     - name: Push the latest lustre UBI image
-      run: docker push ghcr.io/billhpe/rhel-ubi8-base:latest
+      run: docker push ghcr.io/billhpe/rhel-ubi8-lustre:latest
       
