@@ -27,13 +27,13 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build the base UBI Docker image
-      run: docker build . --file Dockerfile --target base --tag ghcr.io/billhpe/rhel-ubi8-base:${TAG}
+      run: docker build . --file Dockerfile --target base --tag ghcr.io/nearnodeflash/rhel-ubi8-base:${TAG}
       
     - name: Build the UBI Docker image with lustre
-      run: docker build . --file Dockerfile --tag ghcr.io/billhpe/rhel-ubi8-lustre:${TAG}
+      run: docker build . --file Dockerfile --tag ghcr.io/nearnodeflash/rhel-ubi8-lustre:${TAG}
       
     - name: Tag the base UBI image as latest
-      run: docker tag ghcr.io/billhpe/rhel-ubi8-base:${TAG} ghcr.io/billhpe/rhel-ubi8-base:latest
+      run: docker tag ghcr.io/nearnodeflash/rhel-ubi8-base:${TAG} ghcr.io/nearnodeflash/rhel-ubi8-base:latest
       
     - name: Push the base UBI image
       run: docker push ghcr.io/billhpe/rhel-ubi8-base:${TAG}
