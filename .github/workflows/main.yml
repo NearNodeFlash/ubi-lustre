@@ -36,17 +36,17 @@ jobs:
       run: docker tag ghcr.io/rhel-ubi8-base:${TAG} ghcr.io/rhel-ubi8-base:latest
       
     - name: Push the base UBI image
-      run: docker push ghcr.io/nearnodeflash/rhel-ubi8-base:${TAG}
+      run: docker push ghcr.io/rhel-ubi8-base:${TAG}
       
     - name: Push the latest base UBI image
-      run: docker push ghcr.io/nearnodeflash/rhel-ubi8-base:latest
+      run: docker push ghcr.io/rhel-ubi8-base:latest
       
     - name: Tag the lustre UBI image as latest
-      run: docker tag ghcr.io/nearnodeflash/rhel-ubi8-lustre:${TAG} ghcr.io/nearnodeflash/rhel-ubi8-lustre:latest
+      run: docker tag ghcr.io/rhel-ubi8-lustre:${TAG} ghcr.io/rhel-ubi8-lustre:latest
       
     - name: Push the lustre UBI image
-      run: docker push ghcr.io/nearnodeflash/rhel-ubi8-lustre:${TAG}
+      run: docker push ghcr.io/rhel-ubi8-lustre:${TAG}
       
     - name: Push the latest lustre UBI image
-      run: docker push ghcr.io/nearnodeflash/rhel-ubi8-lustre:latest
+      run: docker push ghcr.io/rhel-ubi8-lustre:latest
       
